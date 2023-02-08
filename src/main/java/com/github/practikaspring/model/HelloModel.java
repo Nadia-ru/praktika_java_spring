@@ -23,6 +23,10 @@ public class HelloModel {
         this.time = new Timestamp(System.currentTimeMillis());
     }
 
+    public HelloModel() {
+
+    }
+
     public long getId() {
         return id;
     }

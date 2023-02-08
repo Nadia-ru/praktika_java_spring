@@ -12,10 +12,10 @@ public class HelloController {
     @Autowired
     HelloRepository helloRepository;
     @PostMapping("/hello")
-    public ResponseEntity<HelloModel> hello(@RequestBody String text) {
+    public ResponseEntity<HelloModel> hello(@RequestBody  HelloModel model) {
         try {
             HelloModel hello = helloRepository
-                    .save(new HelloModel(text));
+                    .save(new HelloModel(model.getText()));
             return new ResponseEntity<>(hello, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
