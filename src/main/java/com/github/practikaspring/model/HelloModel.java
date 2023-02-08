@@ -13,8 +13,13 @@ public class HelloModel {
     private long id;
     @Column(name = "time")
     private Timestamp time;
+    @Column(name = "text")
+    private String text;
 
-    public HelloModel() {
+    public HelloModel(
+            String text
+    ) {
+        this.text = text;
         this.time = new Timestamp(System.currentTimeMillis());
     }
 
@@ -32,5 +37,13 @@ public class HelloModel {
 
     public void setTime(Timestamp time) {
         this.time = time;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
