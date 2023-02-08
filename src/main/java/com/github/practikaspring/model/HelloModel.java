@@ -15,11 +15,13 @@ public class HelloModel {
     private Timestamp time;
     @Column(name = "text")
     private String text;
-
+    @Column(name = "ip_client")
+    private String ip;
     public HelloModel(
-            String text
+            String text, String ip
     ) {
         this.text = text;
+        this.ip =ip;
         this.time = new Timestamp(System.currentTimeMillis());
     }
 
@@ -49,5 +51,13 @@ public class HelloModel {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 }
